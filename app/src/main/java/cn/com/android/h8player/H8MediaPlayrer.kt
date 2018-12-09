@@ -257,7 +257,6 @@ open class H8MediaPlayrer(context: Context, attribute: AttributeSet) : SurfaceVi
         val trackInfos = mMediaPlayer.trackInfo
         mTrackAudioIndex.clear()
         //curAudioIndex = 0
-
         //mMediaPlayer.setParameter(1102, 0)
 
         trackNum = 0
