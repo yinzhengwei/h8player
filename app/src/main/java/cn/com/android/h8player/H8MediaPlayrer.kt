@@ -147,8 +147,7 @@ open class H8MediaPlayrer(context: Context, attribute: AttributeSet) : SurfaceVi
 
             mMediaPlayer.reset()
 
-//            mMediaPlayer.setDataSource(context, Uri.parse(path))
-            mMediaPlayer.setDataSource(path)
+            mMediaPlayer.setDataSource(context, Uri.parse(path))
             mMediaPlayer.setDisplay(holder)
             mMediaPlayer.prepare()
             mMediaPlayer.start()
@@ -161,23 +160,20 @@ open class H8MediaPlayrer(context: Context, attribute: AttributeSet) : SurfaceVi
 //            } else {
 //                orgin()
 //            }
-
-
         } catch (e: Exception) {
             e.printStackTrace()
         }
     }
-
     /**
      * 升降调
      * 暂时取值范围是：-6.0f ----- 9.0f
      */
     fun soundChange(progress: Float) {
-//        if (progress < -6.0f || progress > 9.0f)
-//            return
-//        Thread {
-//            mMediaPlayer.setPitch(progress)
-//        }.start()
+        if (progress < -6.0f || progress > 9.0f)
+            return
+        Thread {
+            mMediaPlayer.setPitch(progress)
+        }.start()
     }
 
     //默认是原唱
@@ -220,38 +216,38 @@ open class H8MediaPlayrer(context: Context, attribute: AttributeSet) : SurfaceVi
     //如果是单音轨的歌，则切换左右声道
     //左右声道(1左(伴唱)；2右(原唱)；0正常)
     fun track() {
-//        if (trackNum < 2) {
-//            mMediaPlayer.setParameter(1102, 2)
-//        } else {
-////            curAudioIndex = (curAudioIndex + 1) % trackNum
-////            try {
-////                mMediaPlayer.selectTrack(mTrackAudioIndex[curAudioIndex]);
-////            } catch (e: Exception) {
-////                Log.d(TAG, "setAudioTrack(): IllegalStateException: set audio track fail")
-////            }
-//            curAudioIndex = 0
-//            try {
-//                mMediaPlayer.selectTrack(mTrackAudioIndex[curAudioIndex]);
-//            } catch (e: Exception) {
-//                Log.d(TAG, "setAudioTrack(): IllegalStateException: set audio track fail")
-//            }
-//        }
-        isTrack = true
-    }
-
-    //如果是单音轨的歌，则切换左右声道
-    //左右声道(1左(伴唱)；2右(原唱)；0正常)
-    fun orgin() {
-//        if (trackNum < 2) {
-//            mMediaPlayer.setParameter(1102, 1)
-//        } else {
+        if (trackNum < 2) {
+            mMediaPlayer.setParameter(1102, 2)
+        } else {
 //            curAudioIndex = (curAudioIndex + 1) % trackNum
 //            try {
 //                mMediaPlayer.selectTrack(mTrackAudioIndex[curAudioIndex]);
 //            } catch (e: Exception) {
 //                Log.d(TAG, "setAudioTrack(): IllegalStateException: set audio track fail")
 //            }
-//        }
+            curAudioIndex = 0
+            try {
+                mMediaPlayer.selectTrack(mTrackAudioIndex[curAudioIndex]);
+            } catch (e: Exception) {
+                Log.d(TAG, "setAudioTrack(): IllegalStateException: set audio track fail")
+            }
+        }
+        isTrack = true
+    }
+
+    //如果是单音轨的歌，则切换左右声道
+    //左右声道(1左(伴唱)；2右(原唱)；0正常)
+    fun orgin() {
+        if (trackNum < 2) {
+            mMediaPlayer.setParameter(1102, 1)
+        } else {
+            curAudioIndex = (curAudioIndex + 1) % trackNum
+            try {
+                mMediaPlayer.selectTrack(mTrackAudioIndex[curAudioIndex]);
+            } catch (e: Exception) {
+                Log.d(TAG, "setAudioTrack(): IllegalStateException: set audio track fail")
+            }
+        }
         isTrack = false
     }
 
@@ -259,7 +255,8 @@ open class H8MediaPlayrer(context: Context, attribute: AttributeSet) : SurfaceVi
         val trackInfos = mMediaPlayer.trackInfo
         mTrackAudioIndex.clear()
         //curAudioIndex = 0
-        //mMediaPlayer.setParameter(1102, 0)
+
+        mMediaPlayer.setParameter(1102, 0)
 
         trackNum = 0
 
