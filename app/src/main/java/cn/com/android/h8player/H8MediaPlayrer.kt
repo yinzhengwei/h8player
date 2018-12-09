@@ -38,6 +38,7 @@ open class H8MediaPlayrer(context: Context, attribute: AttributeSet) : SurfaceVi
 
     private var mIsPrepared: Boolean = false
 
+
     init {
         mIsPrepared = false
         mMediaPlayer = MediaPlayer().apply {
