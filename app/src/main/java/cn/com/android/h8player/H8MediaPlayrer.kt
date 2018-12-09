@@ -171,6 +171,8 @@ open class H8MediaPlayrer(context: Context, attribute: AttributeSet) : SurfaceVi
      * 暂时取值范围是：-6.0f ----- 9.0f
      */
     fun soundChange(progress: Float) {
+        if (progress < -6.0f || progress > 9.0f)
+            return
         Thread {
             mMediaPlayer.setPitch(progress)
         }.start()
