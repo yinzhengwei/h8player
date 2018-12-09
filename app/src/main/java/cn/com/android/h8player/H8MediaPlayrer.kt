@@ -18,7 +18,7 @@ import java.util.*
 open class H8MediaPlayrer(context: Context, attribute: AttributeSet) : SurfaceView(context, attribute) {
 
     private val TAG = javaClass.name
-    private lateinit var mMediaPlayer: MediaPlayer
+    private var mMediaPlayer: MediaPlayer
     //private var mDisplayManager: DisplayManager = context.getSystemService(Context.DISPLAY_SERVICE) as DisplayManager
     private var am = context.getSystemService(Context.AUDIO_SERVICE) as AudioManager
 
@@ -37,7 +37,6 @@ open class H8MediaPlayrer(context: Context, attribute: AttributeSet) : SurfaceVi
     private var step = 2
 
     private var mIsPrepared: Boolean = false
-
 
     init {
         mIsPrepared = false
@@ -182,7 +181,7 @@ open class H8MediaPlayrer(context: Context, attribute: AttributeSet) : SurfaceVi
 
     fun changeTrack() {
         //Log.e(TAG, "mTrackAudioIndex size = " + mTrackAudioIndex.size)
-        Toast.makeText(context, "$trackNum", Toast.LENGTH_SHORT).show()
+        //Toast.makeText(context, "$trackNum", Toast.LENGTH_SHORT).show()
 
         if (isTrack) {
             orgin()
