@@ -325,5 +325,4 @@ open class H8MediaPlayrer(context: Context, attribute: AttributeSet) : SurfaceVi
 //        }
     }
 
-
 }
