@@ -215,7 +215,6 @@ open class H8MediaPlayrer(context: Context, attribute: AttributeSet) : SurfaceVi
 //        isTrack = !isTrack
     }
 
-
     //如果是单音轨的歌，则切换左右声道
     //左右声道(1左(伴唱)；2右(原唱)；0正常)
     fun track() {
