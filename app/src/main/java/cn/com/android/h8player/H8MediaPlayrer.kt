@@ -164,8 +164,6 @@ open class H8MediaPlayrer(context: Context, attribute: AttributeSet) : SurfaceVi
             e.printStackTrace()
         }
     }
-
-
     /**
      * 升降调
      * 暂时取值范围是：-6.0f ----- 9.0f
