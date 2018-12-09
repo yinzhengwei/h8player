@@ -41,7 +41,7 @@ open class H8MediaPlayrer(context: Context, attribute: AttributeSet) : SurfaceVi
 
     init {
         mIsPrepared = false
-        mMediaPlayer.run {
+        mMediaPlayer = MediaPlayer().apply {
             setOnPreparedListener(mPreparedListener)
             setOnCompletionListener(mCompletionListener)
             setOnErrorListener(mErrorListener)
