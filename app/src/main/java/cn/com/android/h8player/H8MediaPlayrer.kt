@@ -96,7 +96,7 @@ open class H8MediaPlayrer(context: Context, attribute: AttributeSet) : SurfaceVi
             if (defaultVolume == maxVolume || defaultVolume == 0)
                 return
             //直接设置音量值
-            am.setStreamVolume(AudioManager.STREAM_SYSTEM, defaultVolume, AudioManager.FLAG_SHOW_UI)
+            am.setStreamVolume(AudioManager.STREAM_SYSTEM, defaultVolume, AudioManager.FLAG_REMOVE_SOUND_AND_VIBRATE)
 
             //渐进式设置
 //            am.adjustStreamVolume(AudioManager.STREAM_SYSTEM,
