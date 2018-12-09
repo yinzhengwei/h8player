@@ -129,7 +129,6 @@ open class H8MediaPlayrer(context: Context, attribute: AttributeSet) : SurfaceVi
     }
 
     fun setVolumeAdd() {
-        // TODO Auto-generated method stub
         if (defaultVolume < 100) {
             defaultVolume += step
             setVolume()
@@ -182,7 +181,6 @@ open class H8MediaPlayrer(context: Context, attribute: AttributeSet) : SurfaceVi
     var isTrack = true
 
     fun changeTrack() {
-
         //Log.e(TAG, "mTrackAudioIndex size = " + mTrackAudioIndex.size)
         Toast.makeText(context, "$trackNum", Toast.LENGTH_SHORT).show()
 
