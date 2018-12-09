@@ -20,7 +20,6 @@ open class H8MediaPlayrer(context: Context, attribute: AttributeSet) : SurfaceVi
     private val TAG = javaClass.name
     private lateinit var mMediaPlayer: MediaPlayer
     //private var mDisplayManager: DisplayManager = context.getSystemService(Context.DISPLAY_SERVICE) as DisplayManager
-
     private var am = context.getSystemService(Context.AUDIO_SERVICE) as AudioManager
 
     private var maxVolume = am.getStreamMaxVolume(AudioManager.STREAM_SYSTEM)
