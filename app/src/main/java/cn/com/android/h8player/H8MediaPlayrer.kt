@@ -160,6 +160,7 @@ open class H8MediaPlayrer(context: Context, attribute: AttributeSet) : SurfaceVi
 //            } else {
 //                orgin()
 //            }
+
         } catch (e: Exception) {
             e.printStackTrace()
         }
