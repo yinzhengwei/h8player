@@ -296,20 +296,20 @@ open class H8MediaPlayrer(context: Context, attribute: AttributeSet) : SurfaceVi
     private var mPreparedListener: MediaPlayer.OnPreparedListener = MediaPlayer.OnPreparedListener { mp ->
         mIsPrepared = true
         if (mOnPreparedListener != null) {
-            mOnPreparedListener?.onPrepared(mMediaPlayer)
+            mOnPreparedListener?.onPrepared(mp)
         }
     }
 
     private val mCompletionListener = MediaPlayer.OnCompletionListener {
         if (mOnCompletionListener != null) {
-            mOnCompletionListener?.onCompletion(mMediaPlayer)
+            mOnCompletionListener?.onCompletion(it)
         }
     }
 
     private val mErrorListener = MediaPlayer.OnErrorListener { mp, framework_err, impl_err ->
         Log.d(TAG, "Error: $framework_err,$impl_err")
         if (mOnErrorListener != null) {
-            mOnErrorListener?.onError(mMediaPlayer, framework_err, impl_err)
+            mOnErrorListener?.onError(mp, framework_err, impl_err)
         }
         true
     }
