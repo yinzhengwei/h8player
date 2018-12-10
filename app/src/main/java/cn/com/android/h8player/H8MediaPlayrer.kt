@@ -147,7 +147,7 @@ open class H8MediaPlayrer(context: Context, attribute: AttributeSet) : SurfaceVi
 
             mMediaPlayer.reset()
 
-            mMediaPlayer.setDataSource(context, Uri.parse(path))
+            mMediaPlayer.setDataSource(path)
             mMediaPlayer.setDisplay(holder)
             mMediaPlayer.prepare()
             mMediaPlayer.start()
