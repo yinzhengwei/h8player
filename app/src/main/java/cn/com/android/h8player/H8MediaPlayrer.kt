@@ -154,6 +154,7 @@ open class H8MediaPlayrer(context: Context, attribute: AttributeSet) : SurfaceVi
             getTrack()
 
             //上首歌如果是原唱，跟随上一首
+
 //            if (isTrack) {
 //                track()
 //            } else {
