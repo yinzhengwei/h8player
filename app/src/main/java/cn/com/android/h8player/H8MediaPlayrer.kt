@@ -151,7 +151,6 @@ open class H8MediaPlayrer(context: Context, attribute: AttributeSet) : SurfaceVi
             mMediaPlayer.setDisplay(holder)
             mMediaPlayer.prepare()
             //mMediaPlayer.start()
-
             getTrack()
 
             //上首歌如果是原唱，跟随上一首
